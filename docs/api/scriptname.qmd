@@ -1,6 +1,6 @@
-# scriptname { #munch_group_template.modulename.scriptname }
+# scriptname { #genome_intervals.modulename.scriptname }
 
 ```python
-munch_group_template.modulename.scriptname()
+genome_intervals.modulename.scriptname()
 ```
 

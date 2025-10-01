@@ -1,18 +1,18 @@
 {% set pyproject = load_file_data("../pyproject.toml", from_recipe_dir=True) %}
 
 package:
-  name: munch-group-template
+  name: genome-intervals
   version: {{ pyproject.get("project").get("version") }}
 
 source:
-  git_url: https://github.com/munch-group/munch-group-template.git
+  git_url: https://github.com/munch-group/genome-intervals.git
 
 build:
   number: 0
   script: $PYTHON -m pip install . -vv
   python_version_independent: true
   entry_points:
-    - munch-group-template = munch_group_template:munch_group_template
+    - genome-intervals = genome_intervals:genome_intervals
 
 requirements:
   host:
@@ -36,10 +36,10 @@ dependencies:   # keep this block with only these packages
 
 test:
   imports:
-    - munch_group_template
+    - genome_intervals
 
 about:
-  home: https://github.com/munch-group/munch-group-template.git
+  home: https://github.com/munch-group/genome-intervals.git
   license: MIT
-  dev_url: https://github.com/munch-group/munch-group-template.git
-  doc_url: https://munch-group.org/munch-group-template
+  dev_url: https://github.com/munch-group/genome-intervals.git
+  doc_url: https://munch-group.org/genome-intervals

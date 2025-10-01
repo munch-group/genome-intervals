@@ -1,7 +1,7 @@
-# functionname { #munch_group_template.modulename.functionname }
+# functionname { #genome_intervals.modulename.functionname }
 
 ```python
-munch_group_template.modulename.functionname(x=1, y=1)
+genome_intervals.modulename.functionname(x=1, y=1)
 ```
 
 The sum of two numbers.
