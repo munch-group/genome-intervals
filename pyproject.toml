@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "genome-intervals"
-version = "0.1.5"
+version = "0.1.6"
 description = "Project description"
 authors = [
     {name = "Your Name", email = "your@email.com"}
@@ -17,13 +17,12 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dependencies = [
-    "cryptography",
-    "jupyterlab>=4",
-    "nbdime", 
-    "seaborn",
-    "scipy",
-    "scikit-learn",
+    "pandas",
+    "numpy",
     "statsmodels",
+    "matplotlib",
+#    "multiproces",
+    "seaborn",
 ]
 
 [project.urls]
