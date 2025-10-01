@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "genome-intervals"
-version = "0.1.3"
+version = "0.1.4"
 description = "Project description"
 authors = [
     {name = "Your Name", email = "your@email.com"}
@@ -30,9 +30,6 @@ dependencies = [
 Homepage = "https://github.com/munch-group/genome-intervals"
 Repository = "https://github.com/munch-group/genome-intervals"
 Documentation = "https://munch-group.org/genome-intervals"
-
-[project.scripts]
-genome-intervals = "genome_intervals:genome_intervals"
 
 [tool.setuptools]
 include-package-data = true
