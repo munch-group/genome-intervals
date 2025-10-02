@@ -5,8 +5,8 @@ import bisect
 import random
 import sys
 from functools import wraps
-from multiprocessing import cpu_count
-from multiprocess import Pool
+# from multiprocessing import cpu_count
+# from multiprocess import Pool
 
 from collections.abc import Callable
 from typing import Any, TypeVar, List, Tuple, Dict, Union
@@ -140,7 +140,7 @@ def _interval_permute(df, chromosome_sizes):
     return pd.concat(group_list)
 
 
-def bootstrap(chromosome_sizes: Union[str, dict], samples:int=100000, smaller:bool=False, return_boot:bool=False, cores:int=None):
+def bootstrap(chromosome_sizes: Union[str, dict], samples:int=100000, smaller:bool=False, return_boot:bool=False):
     """
     Parameterized decorator that turns a function producing a statistic into one that also
     produces a p-value from bootstrapping. The bootstrapping resamples the
@@ -157,8 +157,6 @@ def bootstrap(chromosome_sizes: Union[str, dict], samples:int=100000, smaller:bo
         Whether to test for significantly small values of the statistic rather than large ones.
     return_boot :
         Whether to return the bootstrap samples too.
-    cores :
-        Number of CPU cores to use for computation, by default all available cores.
         
     Returns
     -------
@@ -167,8 +165,8 @@ def bootstrap(chromosome_sizes: Union[str, dict], samples:int=100000, smaller:bo
         frames with chrom, start, end columns and executes on each chromosome individually. 
     """
 
-    if cores is None:
-        cores = int(os.environ.get('SLURM_CPUS_PER_TASK', cpu_count()))
+    # if cores is None:
+    #     cores = int(os.environ.get('SLURM_CPUS_PER_TASK', cpu_count()))
 
     if type(chromosome_sizes) is str:
         chromosome_sizes = chrom_sizes[chromosome_sizes]
@@ -182,18 +180,18 @@ def bootstrap(chromosome_sizes: Union[str, dict], samples:int=100000, smaller:bo
                 print("Warning: statistic is None or NaN: ", stat, file=sys.stderr)
                 return None, None
 
-            if cores > 1:
-                def _fun(query, annot, kwargs):
-                    perm = _interval_permute(query, chromosome_sizes)
-                    return func(perm, annot, **kwargs)
-                with Pool(cores) as pool:
-                    gen = pool.starmap(_fun, ((query, annot, kwargs) for _ in range(samples)))
-                boot = list(gen)
-            else:
-                boot = list()
-                for i in range(samples):
-                    perm = _interval_permute(query, chromosome_sizes)
-                    boot.append(func(perm, annot, **kwargs))
+            # if cores > 1:
+            #     def _fun(query, annot, kwargs):
+            #         perm = _interval_permute(query, chromosome_sizes)
+            #         return func(perm, annot, **kwargs)
+            #     with Pool(cores) as pool:
+            #         gen = pool.starmap(_fun, ((query, annot, kwargs) for _ in range(samples)))
+            #     boot = list(gen)
+            # else:
+            boot = list()
+            for i in range(samples):
+                perm = _interval_permute(query, chromosome_sizes)
+                boot.append(func(perm, annot, **kwargs))
             boot.sort()
 
             if smaller:
