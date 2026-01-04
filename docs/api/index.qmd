@@ -1,19 +1,64 @@
 # Function reference {.doc .doc-index}
 
-## Some section
+## Genomic set operations
 
-Some description...
-
-
-| | |
-| --- | --- |
-| [functionname](functionname.qmd#genome_intervals.modulename.functionname) | The sum of two numbers. |
-
-## Some other section
-
-Some description...
+Set operations on pandas.DataFrames with columns for chromosome, start, and end.
 
 
 | | |
 | --- | --- |
-| [scriptname](scriptname.qmd#genome_intervals.modulename.scriptname) |  |
+| [interval_diff](interval_diff.qmd#genome_intervals.interval_diff) | This function computes the difference between two sets of genomic intervals. |
+| [interval_union](interval_union.qmd#genome_intervals.interval_union) | This function computes the union of two sets of genomic intervals. The genomic intervals |
+| [interval_intersect](interval_intersect.qmd#genome_intervals.interval_intersect) | This function computes the intersection of two sets of genomic intervals. The genomic intervals |
+| [interval_collapse](interval_collapse.qmd#genome_intervals.interval_collapse) | This function computes the union of intervals in a single set. |
+
+## Remapping
+
+Mapping intervals relative to other coordinates.
+
+
+| | |
+| --- | --- |
+| [interval_distance](interval_distance.qmd#genome_intervals.remapping.interval_distance) | Computes the distance from each query interval to the closest interval in |
+| [remap_interval_data](remap_interval_data.qmd#genome_intervals.remapping.remap_interval_data) | Computes the distance from each query interval to the closest interval |
+
+## Statistics
+
+Mapping intervals relative to other coordinates.
+
+| | |
+| --- | --- |
+| [proximity_stat](proximity_stat.qmd#genome_intervals.stats.proximity_stat) | Proximity test statistic. Computes the distance between query segment and the  |
+| [jaccard_stat](jaccard_stat.qmd#genome_intervals.stats.jaccard_stat) | Jaccard overlap test statistic. |
+
+## Decorators
+
+Utilities for user created genomic intervals and bootstrap tests.
+
+
+| | |
+| --- | --- |
+| [genomic](genomic.qmd#genome_intervals.decorators.genomic) | Decorator for converting a function operating on lists of (start, end) tuples to one |
+| [bootstrap](bootstrap.qmd#genome_intervals.decorators.bootstrap) | Parameterized decorator that turns a function producing a statistic into one that also |
+
+## Interval set utilities
+
+Set operations on sorted lists of (start, end) tuples.
+
+
+| | |
+| --- | --- |
+| [union](union.qmd#genome_intervals.interval_set_op.union) | Union intervals of two sorted lists of (start, end) intervals. |
+| [diff](diff.qmd#genome_intervals.interval_set_op.diff) | Difference intervals of two sorted lists of (start, end) intervals. |
+| [invert](invert.qmd#genome_intervals.interval_set_op.invert) | Produces the complement of a list of sorted intervals  |
+| [intersect](intersect.qmd#genome_intervals.interval_set_op.intersect) | Intersection intervals of two sorted lists of (start, end) intervals. |
+| [collapse](collapse.qmd#genome_intervals.interval_set_op.collapse) | Converts a list of sorted overlapping intervals to non-overlapping |
+
+## Interval mapping utilities
+
+Set operations on sorted lists of (start, end) tuples.
+
+
+| | |
+| --- | --- |
+| [remap](remap.qmd#genome_intervals.remapping.remap) | Remap the coordinates of a single interval in `query` to the distance from |

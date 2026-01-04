@@ -1,0 +1,49 @@
+# remap { #genome_intervals.remapping.remap }
+
+```python
+genome_intervals.remapping.remap(
+    query,
+    annot,
+    relative=False,
+    include_prox_coord=False,
+    overlap_as_zero=False,
+    span_as_zero=False,
+)
+```
+
+Remap the coordinates of a single interval in `query` to the distance from
+the closet interval in `annot`. Returns empty set if annot is empty for
+the chromosome. Intervals from `query` that overlap intervals in `annot`
+are discarded.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+<code>[**query**]{.parameter-name} [:]{.parameter-annotation-sep} [[Tuple](`typing.Tuple`)\[[int](`int`)\]]{.parameter-annotation}</code>
+
+:   Query interval. A tuple of (start, end) coordinates.
+
+<code>[**annot**]{.parameter-name} [:]{.parameter-annotation-sep} [[List](`typing.List`)\[[tuple](`tuple`)\]]{.parameter-annotation}</code>
+
+:   Data frame with annotation intervals. A list of tuples with (start, end) coordinates.
+
+<code>[**relative**]{.parameter-name} [:]{.parameter-annotation-sep} []{.parameter-annotation} [ = ]{.parameter-default-sep} [False]{.parameter-default}</code>
+
+:   Return relative distance (0-1) instead of absolute distance, by default False.
+
+<code>[**include_prox_coord**]{.parameter-name} [:]{.parameter-annotation-sep} []{.parameter-annotation} [ = ]{.parameter-default-sep} [False]{.parameter-default}</code>
+
+:   Include coordinates of the closest annotation segment, by default False.
+
+<code>[**overlap_as_zero**]{.parameter-name} [:]{.parameter-annotation-sep} []{.parameter-annotation} [ = ]{.parameter-default-sep} [False]{.parameter-default}</code>
+
+:   Set distance to zero if one end of a query segment overlaps an annotation segment, by default False. This does not apply to query segments embedded in or spanning on or more annotation segments.
+
+<code>[**span_as_zero**]{.parameter-name} [:]{.parameter-annotation-sep} []{.parameter-annotation} [ = ]{.parameter-default-sep} [False]{.parameter-default}</code>
+
+:   Set distance to zero if a query segment spans a single annotation segment, by default False.
+
+## Returns {.doc-section .doc-section-returns}
+
+<code>[]{.parameter-name} [:]{.parameter-annotation-sep} [[List](`typing.List`)\[[tuple](`tuple`)\]]{.parameter-annotation}</code>
+
+:   A list of tuples with (start, end) coordinates.

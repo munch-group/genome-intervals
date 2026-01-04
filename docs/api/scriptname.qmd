@@ -1,6 +1,0 @@
-# scriptname { #genome_intervals.modulename.scriptname }
-
-```python
-genome_intervals.modulename.scriptname()
-```
-

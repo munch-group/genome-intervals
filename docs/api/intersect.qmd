@@ -1,0 +1,23 @@
+# intersect { #genome_intervals.interval_set_op.intersect }
+
+```python
+genome_intervals.interval_set_op.intersect(a, b)
+```
+
+Intersection intervals of two sorted lists of (start, end) intervals.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+<code>[**a**]{.parameter-name} [:]{.parameter-annotation-sep} [[list](`list`)]{.parameter-annotation}</code>
+
+:   List of intervals.
+
+<code>[**b**]{.parameter-name} [:]{.parameter-annotation-sep} [[list](`list`)]{.parameter-annotation}</code>
+
+:   List of intervals.
+
+## Returns {.doc-section .doc-section-returns}
+
+<code>[]{.parameter-name} [:]{.parameter-annotation-sep} [[list](`list`)]{.parameter-annotation}</code>
+
+:   List of intervals.

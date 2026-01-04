@@ -2,8 +2,11 @@ project:
   type: website
   output-dir: _build
   # resources:
-  #   - objects.txt
-  #   - objects-test.txt
+    # - examples/single-page
+    # - examples/pkgdown
+    # - examples/auto-package
+    # - objects.txt
+    # - objects-test.txt
 
 execute:
   freeze: auto
@@ -43,8 +46,6 @@ website:
     left:
       - href: api/
         text: API reference
-      # - href: gallery/
-      #   text: Gallery
     right:
       - icon: github
         href: https://github.com/munch-group/genome-intervals/
@@ -54,10 +55,17 @@ website:
       style: floating
       align: left
       contents:
-        - pages/overview.ipynb
-        - section: "Examples"
+        - pages/getting_started.qmd
+        - section: "Manipulation"
           contents:
-            - pages/example.ipynb                   
+            - pages/set_operations.ipynb
+            - pages/remapping.ipynb
+        - section: "Tests"
+          contents:
+            - pages/interval_tests.ipynb
+        - section: "Utilities"
+          contents:
+            - pages/decorators.ipynb
 
 lightbox: true
 
@@ -67,16 +75,15 @@ format:
     css:
       - api/_styles-quartodoc.css
       - styles.css
-      # - custom.scss
     toc: true
-    # code-block-background: false
-    # code-block-border-left: true    
-    # highlight-style: arrow
+    # highlight-style: breeze 
+    # highlight-style: github 
+    # code-block-bg: true
     mermaid:
       theme: neutral 
 
 quartodoc:
-  package: genome-intervals
+  package: genome_intervals
   style: pkgdown
   dir: api
   render_interlinks: true
@@ -89,15 +96,48 @@ quartodoc:
   css: "api/_styles-quartodoc.css"
 
   sections:
-    - title: Some section
-      package: genome_intervals.modulename
+    - title: Genomic set operations
+      package: genome_intervals
       desc: |
-        Some description...
+        Set operations on pandas.DataFrames with columns for chromosome, start, and end.
       contents:
-        - functionname
-    - title: Some other section
-      package: genome_intervals.modulename
+        - interval_diff     
+        - interval_union   
+        - interval_intersect 
+        - interval_collapse
+    - title: Remapping
+      package: genome_intervals.remapping
       desc: |
-        Some description...
+        Mapping intervals relative to other coordinates.
+      contents:        
+        - interval_distance
+        - remap_interval_data
+    - title: Statistics
+      package: genome_intervals.stats
+      desc: Mapping intervals relative to other coordinates.
       contents:
-        - scriptname
+        - proximity_stat        
+        - jaccard_stat
+    - title: Decorators
+      package: genome_intervals.decorators
+      desc: |
+        Utilities for user created genomic intervals and bootstrap tests.
+      contents:
+        - genomic 
+        - bootstrap
+    - title: Interval set utilities
+      package: genome_intervals.interval_set_op
+      desc: |
+        Set operations on sorted lists of (start, end) tuples.
+      contents:
+        - union 
+        - diff
+        - invert
+        - intersect
+        - collapse
+    - title: Interval mapping utilities
+      package: genome_intervals.remapping
+      desc: |
+        Set operations on sorted lists of (start, end) tuples.
+      contents:
+        - remap 

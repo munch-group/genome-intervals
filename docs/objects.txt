@@ -1,6 +1,24 @@
 # Sphinx inventory version 2
-# Project: genome-intervals
+# Project: genome_intervals
 # Version: 0.0.9999
 # The remainder of this file is compressed using zlib.
-genome_intervals.modulename.functionname py:function 1 api/functionname.html#genome_intervals.modulename.functionname -
-genome_intervals.modulename.scriptname py:function 1 api/scriptname.html#genome_intervals.modulename.scriptname -
+genome_intervals.interval_diff py:function 1 api/interval_diff.html#genome_intervals.interval_diff -
+genome_intervals.intervals.interval_diff py:function 1 api/interval_diff.html#genome_intervals.interval_diff genome_intervals.interval_diff
+genome_intervals.interval_union py:function 1 api/interval_union.html#genome_intervals.interval_union -
+genome_intervals.intervals.interval_union py:function 1 api/interval_union.html#genome_intervals.interval_union genome_intervals.interval_union
+genome_intervals.interval_intersect py:function 1 api/interval_intersect.html#genome_intervals.interval_intersect -
+genome_intervals.intervals.interval_intersect py:function 1 api/interval_intersect.html#genome_intervals.interval_intersect genome_intervals.interval_intersect
+genome_intervals.interval_collapse py:function 1 api/interval_collapse.html#genome_intervals.interval_collapse -
+genome_intervals.intervals.interval_collapse py:function 1 api/interval_collapse.html#genome_intervals.interval_collapse genome_intervals.interval_collapse
+genome_intervals.remapping.interval_distance py:function 1 api/interval_distance.html#genome_intervals.remapping.interval_distance -
+genome_intervals.remapping.remap_interval_data py:function 1 api/remap_interval_data.html#genome_intervals.remapping.remap_interval_data -
+genome_intervals.stats.proximity_stat py:function 1 api/proximity_stat.html#genome_intervals.stats.proximity_stat -
+genome_intervals.stats.jaccard_stat py:function 1 api/jaccard_stat.html#genome_intervals.stats.jaccard_stat -
+genome_intervals.decorators.genomic py:function 1 api/genomic.html#genome_intervals.decorators.genomic -
+genome_intervals.decorators.bootstrap py:function 1 api/bootstrap.html#genome_intervals.decorators.bootstrap -
+genome_intervals.interval_set_op.union py:function 1 api/union.html#genome_intervals.interval_set_op.union -
+genome_intervals.interval_set_op.diff py:function 1 api/diff.html#genome_intervals.interval_set_op.diff -
+genome_intervals.interval_set_op.invert py:function 1 api/invert.html#genome_intervals.interval_set_op.invert -
+genome_intervals.interval_set_op.intersect py:function 1 api/intersect.html#genome_intervals.interval_set_op.intersect -
+genome_intervals.interval_set_op.collapse py:function 1 api/collapse.html#genome_intervals.interval_set_op.collapse -
+genome_intervals.remapping.remap py:function 1 api/remap.html#genome_intervals.remapping.remap -

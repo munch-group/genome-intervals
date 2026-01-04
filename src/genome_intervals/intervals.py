@@ -95,7 +95,7 @@ def interval_diff(query: pandas.DataFrame, annot: pandas.DataFrame) -> pandas.Da
 
     See Also
     --------
-    [](`genominterv.intervals.interval_union`), [](`genominterv.intervals.interval_intersect`), [](`genominterv.intervals.interval_collapse`).
+    [](`genome_intervals.intervals.interval_union`), [](`genome_intervals.intervals.interval_intersect`), [](`genome_intervals.intervals.interval_collapse`).
     """
 
     return diff(query, annot)
@@ -121,7 +121,7 @@ def interval_union(query: pandas.DataFrame, annot: pandas.DataFrame) -> pandas.D
 
     See Also
     --------
-    [](`genominterv.intervals.interval_diff`), [](`genominterv.intervals.interval_intersect`), [](`genominterv.intervals.interval_collapse`).
+    [](`genome_intervals.intervals.interval_diff`), [](`genome_intervals.intervals.interval_intersect`), [](`genome_intervals.intervals.interval_collapse`).
     """
 
     return union(query, annot)
@@ -147,7 +147,7 @@ def interval_intersect(query: pandas.DataFrame, annot: pandas.DataFrame) -> pand
 
     See Also
     --------
-    [](`genominterv.intervals.interval_diff`), [](`genominterv.intervals.interval_union`), [](`genominterv.intervals.interval_collapse`).
+    [](`genome_intervals.intervals.interval_diff`), [](`genome_intervals.intervals.interval_union`), [](`genome_intervals.intervals.interval_collapse`).
     """
 
     return intersect(query, annot)
@@ -170,7 +170,7 @@ def interval_collapse(interv: pandas.DataFrame) -> pandas.DataFrame:
 
     See Also
     --------
-    [](`genominterv.intervals.interval_diff`), [](`genominterv.intervals.interval_union`), [](`genominterv.intervals.interval_intersect`).
+    [](`genome_intervals.intervals.interval_diff`), [](`genome_intervals.intervals.interval_union`), [](`genome_intervals.intervals.interval_intersect`).
     """
 
     return collapse(interv)

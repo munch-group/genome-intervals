@@ -180,7 +180,7 @@ def interval_distance(query: pandas.DataFrame, annot: pandas.DataFrame, relative
 
     See Also
     --------
-    If you want to retain the original columns in `query`, use [](`~genominterv.remapping.remap_interval_data`).
+    If you want to retain the original columns in `query`, use [](`~genome_intervals.remapping.remap_interval_data`).
     """
     return list(chain.from_iterable(
         remap(q, annot, overlap_as_zero=overlap_as_zero, span_as_zero=span_as_zero, relative=relative) for q in query))
@@ -220,7 +220,7 @@ def remap_interval_data(query: pandas.DataFrame, annot: pandas.DataFrame, relati
 
     See Also
     --------
-    If you do not want to retain the original columns in `query`, use [](`~genominterv.remapping.interval_distance`).
+    If you do not want to retain the original columns in `query`, use [](`~genome_intervals.remapping.interval_distance`).
     """
 
     annot_grouped = annot.groupby('chrom')

@@ -3,10 +3,32 @@ website:
   - contents:
     - api/index.qmd
     - contents:
-      - api/functionname.qmd
-      section: Some section
+      - api/interval_diff.qmd
+      - api/interval_union.qmd
+      - api/interval_intersect.qmd
+      - api/interval_collapse.qmd
+      section: Genomic set operations
     - contents:
-      - api/scriptname.qmd
-      section: Some other section
+      - api/interval_distance.qmd
+      - api/remap_interval_data.qmd
+      section: Remapping
+    - contents:
+      - api/proximity_stat.qmd
+      - api/jaccard_stat.qmd
+      section: Statistics
+    - contents:
+      - api/genomic.qmd
+      - api/bootstrap.qmd
+      section: Decorators
+    - contents:
+      - api/union.qmd
+      - api/diff.qmd
+      - api/invert.qmd
+      - api/intersect.qmd
+      - api/collapse.qmd
+      section: Interval set utilities
+    - contents:
+      - api/remap.qmd
+      section: Interval mapping utilities
     id: api
   - id: dummy-sidebar
